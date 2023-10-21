@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'app'
+    static_configs:
+      - targets: ['app:5000']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+# alerting:
+#   alertmanagers:
+#     - scheme: http
+#       static_configs:
+#         - targets: ['alertmanager:9093']
+
+
+# rule_files:
+#   - alert_rules.yml
